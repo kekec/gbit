@@ -210,6 +210,7 @@ static int test_instruction(struct test_inst *inst)
             disassemble(instruction_mem);
         }
 
+        state.num_mem_accesses = 0;
         u8 imem_old[INSTRUCTION_MEM_SIZE] = {0};
         memcpy(instruction_mem, imem_old, INSTRUCTION_MEM_SIZE);
         last_op_had_failure = run_state(&state);
